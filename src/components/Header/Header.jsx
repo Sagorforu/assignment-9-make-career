@@ -12,7 +12,7 @@ const Header = () => {
                     <Link to='/'><button className='btn-color mt-6 px-4 py-3 rounded-md font-semibold text-sm text-white'>Get Started</button></Link>
                 </div>
                 <div className='lg:w-1/2'>
-                    <img className='' src="/src/assets/All Images/person.png" alt="" />
+                    <img className='' src="https://i.ibb.co/Hqr69Ts/person.png" alt="" />
                 </div>
             </div>
         </div>
