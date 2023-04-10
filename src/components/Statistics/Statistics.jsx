@@ -14,11 +14,13 @@ const assignmentMarks = [
 
 const Statistics = () => {
     return (
-        <div className='lg:px-36 px-2 text-center content-center'>
-            <h1 className='text-[#1A1919] my-16 text-center font-bold text-3xl lg:text-5xl'>Here is my all assignment Marks</h1>
-            <div className='lg:flex items-center justify-around lg:px-40 pl-10'>
+        <div className=''>
+            <div className='background-color lg:px-36 px-2 text-center py-28'>
+                <h2 className='text-[#1A1919] font-bold text-3xl lg:text-5xl'>Here is my all assignment Marks</h2>
+            </div>
+            <div className='lg:flex my-10 items-center justify-around lg:px-40 pl-10'>
                 <div className=''>
-                    <h2 className='text-[#474747] font-bold text-3xl lg:text-5xl'>Total Assignment <br /> Marks <span className='text-color font-bold text-5xl lg:text-7xl'>60</span></h2>
+                    <h2 className='text-[#474747] font-bold text-3xl lg:text-4xl'>Total Assignment <br /> Marks: <span className='mt-2 text-color font-bold text-5xl lg:text-7xl'>60</span></h2>
                 </div>
                 <PieChart width={400} height={400}>
                     <Pie
