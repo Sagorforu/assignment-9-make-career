@@ -5,7 +5,7 @@ const Navbar = () => {
     return (
         <div className='background-color py-5 lg:flex items-center justify-between lg:px-36 px-2'>
             <Link to='/'><h2 className='text-[#1A1919] font-bold text-2xl'>Make Career</h2></Link>
-            <ul className='lg:flex text-[#757575] font-semibold'>
+            <ul className='lg:flex '>
           <li className='p-4'>
             <NavLink
               to='/'
