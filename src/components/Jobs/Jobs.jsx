@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Job from '../Job/Job';
 
 const Jobs = () => {
@@ -15,6 +15,9 @@ const Jobs = () => {
                     job={job}
                     ></Job>)
                 }
+            </div>
+            <div className='text-center'>
+            <Link to='/'><button className='btn-color text-center mt-10 px-5 py-3 rounded-md font-semibold text-base text-white'>See All Jobs</button></Link>
             </div>
         </div>
     );

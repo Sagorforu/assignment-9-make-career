@@ -26,7 +26,7 @@ const Job = ({ job }) => {
                         <h4 className='mt-4 ml-2 text-[#757575] font-semibold text-base'>{salary}</h4>
                     </div>
                 </div>
-                <Link to='/'><button className='btn-color mt-6 px-5 py-3 rounded-md font-semibold text-base text-white'>View Details</button></Link>
+                <Link to='/'><button className='btn-color mt-6 px-5 py-2 rounded-md font-semibold text-base text-white'>View Details</button></Link>
             </div>
         </div>
     );

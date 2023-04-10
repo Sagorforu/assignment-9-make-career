@@ -39,7 +39,7 @@ const Navbar = () => {
             </NavLink>
           </li>
         </ul>
-            <Link to='/'><button className='btn-color px-4 py-3 rounded-md font-semibold text-sm text-white'>Star Applying</button></Link>
+            <Link to='/'><button className='btn-color px-4 py-3 rounded-md font-semibold text-sm text-white'>Start Applying</button></Link>
         </div>
     );
 };
