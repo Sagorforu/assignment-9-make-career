@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
     return (
-        <div className='background-color py-5 lg:flex items-center justify-around'>
+        <div className='background-color py-5 lg:flex items-center justify-between lg:px-36 px-2'>
             <Link to='/'><h2 className='text-[#1A1919] font-bold text-2xl'>Make Career</h2></Link>
             <ul className='lg:flex text-[#757575] font-semibold'>
           <li className='p-4'>
@@ -39,7 +39,7 @@ const Navbar = () => {
             </NavLink>
           </li>
         </ul>
-            <Link to='/'><button className='btn-color px-3 py-2 rounded-md font-semibold text-sm text-white'>Star Applying</button></Link>
+            <Link to='/'><button className='btn-color px-4 py-3 rounded-md font-semibold text-sm text-white'>Star Applying</button></Link>
         </div>
     );
 };
