@@ -25,7 +25,7 @@ const Jobs = () => {
                 }
             </div>
             <div className='text-center'>
-            <Link to='/'><button onClick={fetchData} className='btn-color text-center mt-10 px-5 py-3 rounded-md font-semibold text-base text-white'>See All Jobs</button></Link>
+            <Link to='/'>{data.length < jobs.length && (<button onClick={fetchData} className='btn-color text-center mt-10 px-5 py-3 rounded-md font-semibold text-base text-white'>See All Jobs</button>)}</Link>
             </div>
         </div>
     );
