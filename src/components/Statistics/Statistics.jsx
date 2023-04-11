@@ -15,7 +15,7 @@ const assignmentMarks = [
 const Statistics = () => {
     return (
         <div className=''>
-            <div className='background-color lg:px-36 px-2 text-center py-28'>
+            <div className='background-color lg:px-36 px-2 text-center pb-28 pt-12'>
                 <h2 className='text-[#1A1919] font-bold text-3xl lg:text-5xl'>Here is my all assignment Marks</h2>
             </div>
             <div className='lg:flex my-10 items-center justify-around lg:px-40 pl-10'>

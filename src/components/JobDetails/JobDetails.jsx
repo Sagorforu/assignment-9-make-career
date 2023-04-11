@@ -1,17 +1,39 @@
 import { data } from 'autoprefixer';
 import React, { useEffect, useState } from 'react';
-import { Link, useLoaderData, useParams } from 'react-router-dom';
+import { useLoaderData, useParams } from 'react-router-dom';
 
 const JobDetails = () => {
-    const {id} = useParams();
+    const { id } = useParams();
     const jobDetails = useLoaderData();
     const [details, setDetails] = useState({});
-    useEffect(()=>{
+    useEffect(() => {
         const data = jobDetails.find(job => job.id == id)
         setDetails(data)
-    },[id])
-    const { title, name, jobTitle, description, image,jobType, isRemote, jobLocation, salary, responsibilities, requirements, experience, phone, email, address } = details;
-    
+    }, [id])
+    const { title, name, jobTitle, description, image, jobType, isRemote, jobLocation, salary, responsibilities, requirements, experience, phone, email, address } = details;
+
+    const handleApplyBtn = details => {
+        addToDb(details)
+        console.log(details)
+    }
+
+    const addToDb = (details) => {
+        const id = details.id;
+        let allJobs = {};
+        let storedJob = localStorage.getItem('applied-jobs');
+        if (storedJob) {
+            allJobs = JSON.parse(storedJob);
+        }
+        let getId = allJobs[id];
+        if (getId) {
+            allJobs[id] = details;
+        }
+        else {
+            allJobs[id] = details;
+        }
+        localStorage.setItem('applied-jobs', JSON.stringify(allJobs));
+    };
+
     return (
         <div>
             <div className='background-color lg:px-36 px-2 text-center py-28'>
@@ -33,32 +55,32 @@ const JobDetails = () => {
                         <div className='flex my-4 items-center'>
                             <img src="https://i.ibb.co/p0L65Ls/money.png" alt="" />
                             <h3 className='text-[#474747] mx-2 font-bold text-base'>Salary:</h3>
-                        <p className='text-[#757575] font-semibold'> {salary}</p>
+                            <p className='text-[#757575] font-semibold'> {salary}</p>
                         </div>
                         <div className='flex my-4 items-center'>
                             <img src="https://i.ibb.co/VBCwsRt/Frame-date.png" alt="" />
                             <h3 className='text-[#474747] mx-2 font-bold text-base'>Job Title:</h3>
-                        <p className='text-[#757575] font-semibold'> {jobTitle}</p>
+                            <p className='text-[#757575] font-semibold'> {jobTitle}</p>
                         </div>
                         <h2 className='text-[#1A1919] mt-8 mb-5 font-bold text-base'>Contact Information</h2>
                         <hr className='border-x-4' />
                         <div className='flex my-4 items-center'>
                             <img src="https://i.ibb.co/XzvfGn3/call.png" alt="" />
                             <h3 className='text-[#474747] mx-2 font-bold text-base'>Phone:</h3>
-                        <p className='text-[#757575] font-semibold'> {phone}</p>
+                            <p className='text-[#757575] font-semibold'> {phone}</p>
                         </div>
                         <div className='flex my-4 items-center'>
                             <img src="https://i.ibb.co/NK4BPHb/message.png" alt="" />
                             <h3 className='text-[#474747] mx-2 font-bold text-base'>Email:</h3>
-                        <p className='text-[#757575] font-semibold'> {email}</p>
+                            <p className='text-[#757575] font-semibold'> {email}</p>
                         </div>
                         <div className='flex my-4 items-center'>
                             <img src="https://i.ibb.co/bK0gVYb/location.png" alt="" />
                             <h3 className='text-[#474747] mx-2 font-bold text-base'>Address:</h3>
-                        <p className='text-[#757575] font-semibold'> {address}</p>
+                            <p className='text-[#757575] font-semibold'> {address}</p>
                         </div>
                     </div>
-                    <Link to='/'><button className='btn-color w-full mt-6 px-4 py-3 rounded-md font-semibold text-sm text-white'>Apply Now</button></Link>
+                    <button onClick={() => handleApplyBtn(details)} className='btn-color w-full mt-6 px-4 py-3 rounded-md font-semibold text-sm text-white'>Apply Now</button>
                 </div>
             </div>
         </div>

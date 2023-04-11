@@ -3,7 +3,7 @@ import React from 'react';
 const Blog = () => {
     return (
         <div className=''>
-            <div className='background-color text-center py-28'>
+            <div className='background-color text-center pb-28 pt-12'>
                 <h2 className='text-[#1A1919] font-bold text-3xl lg:text-5xl'>Here is some questions and answers</h2>
             </div>
             <div className='lg:px-36 px-2 my-10'>
