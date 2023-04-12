@@ -36,7 +36,7 @@ const AppliedJobs = () => {
 
     return (
         <div>
-            <div className='background-color text-center pb-28 pt-12'>
+            <div className='background-color text-center lg:pb-28 pb-8 lg:pt-12 pt-4'>
                 <h2 className='text-[#1A1919] font-bold text-3xl lg:text-5xl'>Applied Jobs</h2>
             </div>
             <div className='lg:px-36 px-2 mt-28 mb-6 text-end'>
