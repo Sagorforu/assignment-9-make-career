@@ -1,6 +1,8 @@
 import { data } from 'autoprefixer';
 import React, { useEffect, useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
+import { toast } from 'react-hot-toast';
+
 
 const JobDetails = () => {
     const { id } = useParams();
@@ -20,18 +22,21 @@ const JobDetails = () => {
     const addToDb = (details) => {
         const id = details.id;
         let allJobs = {};
-        let storedJob = localStorage.getItem('applied-jobs');
+        let storedJob = localStorage.getItem('applied');
         if (storedJob) {
             allJobs = JSON.parse(storedJob);
         }
         let getId = allJobs[id];
         if (getId) {
             allJobs[id] = details;
+            toast('Already applied this job');
+            // alert('already ')
+            console.log('already added')
         }
         else {
             allJobs[id] = details;
         }
-        localStorage.setItem('applied-jobs', JSON.stringify(allJobs));
+        localStorage.setItem('applied', JSON.stringify(allJobs));
     };
 
     return (

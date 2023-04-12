@@ -1,30 +1,51 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import AppliedJob from '../AppliedJob/AppliedJob';
 
 const AppliedJobs = () => {
-    const getJob = () => {
-        let allJobs = {};
-        const storedJob = localStorage.getItem('applied-jobs');
-        if (storedJob) {
-            allJobs = JSON.parse(storedJob);
+    const [gotJob, setGotJob] = useState([])
+    const [onsiteJob, setOnsiteJob] = useState([])
+    let applyJob = [];
+    useEffect(()=>{
+        const getJob = () => {
+            let allJobs = {};
+            const storedJob = localStorage.getItem('applied');
+            if (storedJob) {
+                allJobs = JSON.parse(storedJob);
+            }
+            return allJobs;
         }
-        return allJobs;
+        const appliedJobs = getJob();
+        applyJob = Object.values(appliedJobs);
+        setGotJob(applyJob)
+        setOnsiteJob(applyJob)
+    // console.log(appliedJobs)
+    console.log(applyJob)
+
+    },[])
+
+    
+
+    const remote = () => {
+        const remoteJobs = onsiteJob.filter(remoteJob => remoteJob.isRemote === "Remote")
+        setGotJob(remoteJobs)
+    }
+    const onsite = () => {
+        const onsiteJobs = onsiteJob.filter(onsiteJob => onsiteJob.isRemote !== "Remote")
+        setGotJob(onsiteJobs)
     }
 
-    const appliedJobs = getJob();
-    console.log(appliedJobs)
     return (
         <div>
             <div className='background-color text-center pb-28 pt-12'>
                 <h2 className='text-[#1A1919] font-bold text-3xl lg:text-5xl'>Applied Jobs</h2>
             </div>
             <div className='lg:px-36 px-2 mt-28 mb-6 text-end'>
-                <button className='mr-6 py-2 px-4 text-color border-2 border-[#9873FF] rounded font-bold'>Filter Remote Job</button>
-                <button className='py-2 px-4 text-color border-2 border-[#9873FF] rounded font-bold'>Filter Onsite Job</button>
+                <button onClick={remote} className='mr-6 py-2 px-4 text-color border-2 border-[#9873FF] rounded font-bold'>Filter Remote Job</button>
+                <button onClick={onsite} className='py-2 px-4 text-color border-2 border-[#9873FF] rounded font-bold'>Filter Onsite Job</button>
             </div>
             <div className='lg:px-36 px-2 my-4'>
                 {
-                    Object.values(appliedJobs).map(appliedJob => <AppliedJob
+                    gotJob.map(appliedJob => <AppliedJob
                         key={appliedJob.id}
                         appliedJob={appliedJob}
                     ></AppliedJob>)
