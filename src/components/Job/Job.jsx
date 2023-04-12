@@ -7,7 +7,7 @@ import { faCircleDollarToSlot } from '@fortawesome/free-solid-svg-icons'
 const Job = ({ job }) => {
     const {id, title, name, jobTitle, description, image,jobType, isRemote, jobLocation, salary, responsibilities, requirements, experience, phone, email, address } = job;
     return (
-        <div className='border-2 px-2 py-5 lg:p-10 rounded-lg'>
+        <div className='border-2 px-2 lg:p-10 p-10 lg:mb-0 mb-4 rounded-lg'>
             <div>
                 <img src={image} alt="" />
                 <h2 className='mt-8 text-[#474747] font-bold text-xl'>{title}</h2>
