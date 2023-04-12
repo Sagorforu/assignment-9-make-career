@@ -11,7 +11,7 @@ const AppliedJob = ({ appliedJob }) => {
     return (
         <div className='lg:flex items-center justify-between p-6 border-2 rounded-lg mb-4'>
             <div className='lg:flex items-center'>
-                <div className='bg-[#F4F4F4] px-8 py-20 rounded-lg'>
+                <div className='bg-[#F4F4F4] px-8 py-20 lg:mb-0 mb-6 rounded-lg'>
                     <img className='' src={image} alt="" />
                 </div>
                 <div className='lg:ml-12'>

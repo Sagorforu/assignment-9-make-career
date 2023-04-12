@@ -18,12 +18,7 @@ const AppliedJobs = () => {
         applyJob = Object.values(appliedJobs);
         setGotJob(applyJob)
         setOnsiteJob(applyJob)
-    // console.log(appliedJobs)
-    console.log(applyJob)
-
     },[])
-
-    
 
     const remote = () => {
         const remoteJobs = onsiteJob.filter(remoteJob => remoteJob.isRemote === "Remote")
