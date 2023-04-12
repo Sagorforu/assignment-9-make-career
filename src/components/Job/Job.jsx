@@ -13,8 +13,8 @@ const Job = ({ job }) => {
                 <h2 className='mt-8 text-[#474747] font-bold text-xl'>{title}</h2>
                 <p className='mt-2 text-[#757575] font-semibold text-base'>{name}</p>
                 <div className='mt-4'>
-                    <button className='py-1 px-4 mr-4 text-color border-2 border-[#9873FF] rounded font-bold'>{isRemote}</button>
-                    <button className='py-1 px-4 text-color border-2 border-[#9873FF] rounded font-bold'>{jobType}</button>
+                    <h2 className='py-1 px-4 mr-4 text-color border-2 border-[#9873FF] rounded font-bold'>{isRemote}</h2>
+                    <h2 className='py-1 px-4 text-color border-2 border-[#9873FF] rounded font-bold'>{jobType}</h2>
                 </div>
                 <div className='lg:flex'>
                     <div className='flex items-center lg:mr-6'>

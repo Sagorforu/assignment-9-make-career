@@ -18,8 +18,8 @@ const AppliedJob = ({ appliedJob }) => {
                     <h2 className=' text-[#474747] font-bold text-xl'>{title}</h2>
                     <h3 className='mt-2 text-[#757575] font-semibold text-base'>{name}</h3>
                     <div className='mt-4'>
-                        <button className='py-1 px-4 mr-4 text-color border-2 border-[#9873FF] rounded font-bold'>{isRemote}</button>
-                        <button className='py-1 px-4 text-color border-2 border-[#9873FF] rounded font-bold'>{jobType}</button>
+                        <h2 className='py-1 px-4 mr-4 text-color border-2 border-[#9873FF] rounded font-bold'>{isRemote}</h2>
+                        <h2 className='py-1 px-4 text-color border-2 border-[#9873FF] rounded font-bold'>{jobType}</h2>
                     </div>
                     <div className='lg:flex'>
                         <div className='flex items-center lg:mr-6'>
