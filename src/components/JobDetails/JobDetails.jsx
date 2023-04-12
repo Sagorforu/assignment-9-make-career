@@ -1,7 +1,9 @@
 import { data } from 'autoprefixer';
 import React, { useEffect, useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
-import { toast } from 'react-hot-toast';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 const JobDetails = () => {
@@ -29,9 +31,7 @@ const JobDetails = () => {
         let getId = allJobs[id];
         if (getId) {
             allJobs[id] = details;
-            toast('Already applied this job');
-            // alert('already ')
-            console.log('already added')
+            toast("Already applied this job")
         }
         else {
             allJobs[id] = details;
@@ -86,6 +86,7 @@ const JobDetails = () => {
                         </div>
                     </div>
                     <button onClick={() => handleApplyBtn(details)} className='btn-color w-full mt-6 px-4 py-3 rounded-md font-semibold text-sm text-white'>Apply Now</button>
+                    <ToastContainer />
                 </div>
             </div>
         </div>
